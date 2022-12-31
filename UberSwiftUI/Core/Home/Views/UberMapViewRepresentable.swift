@@ -12,7 +12,6 @@ struct UberMapViewRepresentable: UIViewRepresentable{
     let mapView = MKMapView()
     // here we init the locationManager & can update the location...
     let locationManager = LocationManager()
-    
     // this incharge to make our map view
     func makeUIView(context: Context) -> some UIView {
         mapView.delegate = context.coordinator
