@@ -20,7 +20,7 @@ struct LocationSearchActivationView: View {
         }
         .frame(width: UIScreen.main.bounds.width - 64,height: 50)
         .background(
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: 25)
                 .fill(Color.white)
                 .shadow(color: Color.black, radius: 6)
         )
