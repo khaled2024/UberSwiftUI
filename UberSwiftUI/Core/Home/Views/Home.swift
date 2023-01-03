@@ -14,7 +14,7 @@ struct Home: View {
             UberMapViewRepresentable()
                 .ignoresSafeArea()
             if showLocationSearchView{
-                LocationSearchView()
+                LocationSearchView(showLocationSearchView: $showLocationSearchView)
             }else{
                 LocationSearchActivationView()
                     .padding(.vertical, 72)
