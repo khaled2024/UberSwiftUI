@@ -10,7 +10,7 @@ import MapKit
 class LocationSearchViewModel: NSObject,ObservableObject {
     //MARK: - proparties
     @Published var results = [MKLocalSearchCompletion]()
-    @Published var selectedLocation: String?
+    @Published var selectedLocationCoordinate: CLLocationCoordinate2D?
     private let searchCompleter = MKLocalSearchCompleter()
     var queryFragment: String = "" {
         didSet{
@@ -24,8 +24,24 @@ class LocationSearchViewModel: NSObject,ObservableObject {
         searchCompleter.queryFragment = queryFragment
     }
     //MARK: - func
-    func selectLocation(_ location: String){
-        self.selectedLocation = location
+    func selectLocation(_ localSearch: MKLocalSearchCompletion){
+        locationSearch(forLocalSearchCompletion: localSearch) { response, error in
+            if let error = error {
+                print("error failed location search \(error.localizedDescription)")
+                return
+            }
+            guard let item = response?.mapItems.first else{return}
+            let coordinate = item.placemark.coordinate
+            self.selectedLocationCoordinate = coordinate
+            print("coordinates is \(coordinate)")
+        }
+    }
+    func locationSearch(forLocalSearchCompletion localSeach: MKLocalSearchCompletion, completion: @escaping MKLocalSearch.CompletionHandler){
+        let searchrequest = MKLocalSearch.Request()
+        // هنا بيسرش علي الاحداثيات بتاعت اللوكيشن بالتايتل والصب تايتل...
+        searchrequest.naturalLanguageQuery = localSeach.title.appending(localSeach.subtitle)
+        let search = MKLocalSearch(request: searchrequest)
+        search.start(completionHandler: completion)
     }
 }
 //MARK: - MKLocalSearchCompleterDelegate
