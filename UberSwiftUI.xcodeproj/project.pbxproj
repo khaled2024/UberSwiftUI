@@ -20,6 +20,7 @@
 		EA9024022962407A006AE4DB /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9024012962407A006AE4DB /* LocationSearchViewModel.swift */; };
 		EABCE5B4296AF2F8004C0729 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCE5B3296AF2F8004C0729 /* MapViewState.swift */; };
 		EABCE5B7296B04FE004C0729 /* RideRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABCE5B6296B04FE004C0729 /* RideRequestView.swift */; };
+		EAE25B6A296B595E00592283 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE25B69296B595E00592283 /* RideType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		EA9024012962407A006AE4DB /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
 		EABCE5B3296AF2F8004C0729 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 		EABCE5B6296B04FE004C0729 /* RideRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestView.swift; sourceTree = "<group>"; };
+		EAE25B69296B595E00592283 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				EABCE5B3296AF2F8004C0729 /* MapViewState.swift */,
+				EAE25B69296B595E00592283 /* RideType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				EA14317E2955B40300CEC5B8 /* UberSwiftUIApp.swift in Sources */,
 				EA9023FA296040AC006AE4DB /* LocationSearchActivationView.swift in Sources */,
 				EA9024002960540B006AE4DB /* LocationSearchResultCell.swift in Sources */,
+				EAE25B6A296B595E00592283 /* RideType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +403,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UberSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location to find you nearby drivers and rides";
@@ -412,7 +417,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.khaled2024.UberSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = khaled2024.UberSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -428,6 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UberSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location to find you nearby drivers and rides";
@@ -441,7 +447,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.khaled2024.UberSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = khaled2024.UberSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

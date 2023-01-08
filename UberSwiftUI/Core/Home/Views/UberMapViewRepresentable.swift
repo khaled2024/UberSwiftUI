@@ -32,6 +32,7 @@ struct UberMapViewRepresentable: UIViewRepresentable{
             break
         case .locationSelected:
             if let coordinate = locationViewModel.selectedLocationCoordinate{
+                print("corrdinate : \(coordinate)")
                 context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
                 context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
             }
@@ -78,7 +79,6 @@ extension UberMapViewRepresentable{
             anno.coordinate = coordinate
             parent.mapView.addAnnotation(anno)
             parent.mapView.selectAnnotation(anno, animated: true)
-            
             parent.mapView.showAnnotations(parent.mapView.annotations, animated: true)
         }
         // Polyline...
@@ -87,7 +87,9 @@ extension UberMapViewRepresentable{
             getdestinationRoute(from: userLocationCoordinate,
                                 to: coordinate) { route in
                 self.parent.mapView.addOverlay(route.polyline)
-                
+                // to make polyline fit up to the Ride Request View...
+                let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect,edgePadding: .init(top: 64, left: 32, bottom: 500, right: 32))
+                self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
             }
         }
         // getdestinationRoute...
