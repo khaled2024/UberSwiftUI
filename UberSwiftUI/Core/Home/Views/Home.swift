@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Home: View {
     @State private var mapState = MapViewState.noInput
+    @EnvironmentObject var locationViewModel: LocationSearchViewModel
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .top){
@@ -29,13 +30,18 @@ struct Home: View {
                     .padding(.leading)
                     .padding(.top, 4)
             }
-            if mapState == .locationSelected{
+            if mapState == .locationSelected || mapState == .polylineAdded{
                 RideRequestView()
                 // spring animation that we did it when user tab to location and move up from bottom...
                     .transition(.move(edge: .bottom))
             }
         }
         .edgesIgnoringSafeArea(.bottom)
+        .onReceive(LocationManager.shared.$userLocation) { location in
+            if let location = location{
+                locationViewModel.userLocation = location
+            }
+        }
     }
 }
 
