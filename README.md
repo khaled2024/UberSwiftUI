@@ -1,5 +1,4 @@
-# UberSwiftUI
-UberSwiftUI :)
+#                                       UberSwiftUI Application
 # Uber with Swift ui 
 - manage User to search for any location and route the distance from his current location to the search result location that he want to go 
 - make a pricing model, manage to get the time of pick up and drop off to the location.
