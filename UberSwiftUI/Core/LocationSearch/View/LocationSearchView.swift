@@ -27,7 +27,8 @@ struct LocationSearchView: View {
                         .frame(width: 6, height: 6)
                 }
                 VStack{
-                    TextField("Current location", text: $startLocationText)
+                    TextField("Your location", text: $startLocationText)
+                        .disabled(true)
                         .frame(height: 32)
                         .background(Color(.systemGroupedBackground))
                         .padding(.trailing)

@@ -33,7 +33,7 @@ struct RideRequestView: View {
                 // trip locatios and time to arrive...
                 VStack(alignment: .leading, spacing: 24){
                     HStack{
-                        Text("Current location")
+                        Text("Your location")
                             .font(.system(size: 16,weight: .semibold))
                             .foregroundColor(.gray)
                         Spacer()
