@@ -95,7 +95,6 @@ extension UberMapViewRepresentable{
                 self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
             }
         }
-        
         func clearMapViewAndRecenterOnUserLocation(){
             parent.mapView.removeAnnotations(parent.mapView.annotations)
             parent.mapView.removeOverlays(parent.mapView.overlays)
